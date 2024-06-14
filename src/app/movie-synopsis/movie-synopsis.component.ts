@@ -10,9 +10,9 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class MovieSynopsisComponent implements OnInit {
 
   /**
-   * constructor for MovieSynopsisComponent
-   * @param dialogRef - reference to the dialog opened by the component
-   * @param data - data passed to the dialog, including movieName and description
+   * constructor for MovieSynopsisComponent.
+   * @param dialogRef - reference to the dialog opened by the component.
+   * @param data - data passed to the dialog, including movieName and description.
    */
   constructor(
     @Inject(MAT_DIALOG_DATA)

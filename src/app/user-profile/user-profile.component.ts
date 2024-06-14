@@ -26,11 +26,11 @@ export class UserProfileComponent implements OnInit {
   FavoriteMovies: any[] = [];
 
   /**
-   * constructs UserProfileComponent
-   * @param fetchApiData - the service for fetching API data
-   * @param dialog - the dialog service to display dialogs
-   * @param snackBar - the snack bar service for displaying notifications
-   * @param router - the service for navigation
+   * constructs UserProfileComponent.
+   * @param fetchApiData - the service for fetching API data.
+   * @param dialog - the dialog service to display dialogs.
+   * @param snackBar - the snack bar service for displaying notifications.
+   * @param router - the service for navigation.
    */
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -74,9 +74,9 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * checks if a movie is in the user's favorites list
-   * @param movie - the movie to check
-   * @returns true if the movie is a favorite, otherwise it is false
+   * checks if a movie is in the user's favorites list.
+   * @param movie - the movie to check.
+   * @returns true if the movie is a favorite, otherwise it is false.
    */
   isFavorite(movie: any): boolean {
     const MovieID = movie._id;
@@ -88,8 +88,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * deletes a movie from the user's favorites list
-   * @param movie - the movie to remove
+   * deletes a movie from the user's favorites list.
+   * @param movie - the movie to remove.
    */
   deleteFavoriteMovies(movie: any): void {
     this.user = this.fetchApiData.getUser();
@@ -134,9 +134,9 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * opens a dialog to view genre information for that movie
-   * @param genre  - the genre
-   * @param description - description of the genre
+   * opens a dialog to view genre information for that movie.
+   * @param genre  - the genre.
+   * @param description - description of the genre.
    */
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreInfoComponent, {
@@ -149,11 +149,11 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * opens a dialog to view the director info
-   * @param name - the director's name
-   * @param bio - the director's bio
-   * @param birth - the director's birth year
-   * @param death - year of director's death
+   * opens a dialog to view the director info.
+   * @param name - the director's name.
+   * @param bio - the director's bio.
+   * @param birth - the director's birth year.
+   * @param death - year of director's death.
    */
   openDirectorDialog(name: string, bio: string, birth: string, death: string): void {
     this.dialog.open(DirectorInfoComponent, {
@@ -168,8 +168,8 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * opens a dialog to view a synopsis of the movie
-   * @param description - the synopsis of the movie
+   * opens a dialog to view a synopsis of the movie.
+   * @param description - the synopsis of the movie.
    */
   openSynopsisDialog(description: string): void {
     this.dialog.open(MovieSynopsisComponent, {

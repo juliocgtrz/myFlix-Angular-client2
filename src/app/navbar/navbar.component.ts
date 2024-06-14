@@ -13,9 +13,9 @@ export class NavbarComponent implements OnInit {
   public Username: string = "";
 
   /**
-   * constructor for NavbarComponent
-   * @param snackBar - angular material service for displaying snackbar messages
-   * @param router - angular service for navigating between routes
+   * constructor for NavbarComponent.
+   * @param snackBar - angular material service for displaying snackbar messages.
+   * @param router - angular service for navigating between routes.
    */
   constructor(
     public snackBar: MatSnackBar,

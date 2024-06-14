@@ -11,8 +11,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class WelcomePageComponent implements OnInit {
   /**
-   * constructs the WelcomePageComponent
-   * @param dialog - the dialog service for opening the dialog
+   * constructs the WelcomePageComponent.
+   * @param dialog - the dialog service for opening the dialog.
    */
   constructor(public dialog: MatDialog
   ) { }

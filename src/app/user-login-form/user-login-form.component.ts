@@ -23,11 +23,11 @@ export class UserLoginFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '' };
 
   /**
-   * constructs the UserLoginFormComponent
-   * @param fetchApiData - the service for fetching API data
-   * @param dialogRef - the reference to the dialog
-   * @param snackBar - the service for showing snack bar notifications
-   * @param router - the router service for navigation
+   * constructs the UserLoginFormComponent.
+   * @param fetchApiData - the service for fetching API data.
+   * @param dialogRef - the reference to the dialog.
+   * @param snackBar - the service for showing snack bar notifications.
+   * @param router - the router service for navigation.
    */
   constructor(
     public fetchApiData: FetchApiDataService,

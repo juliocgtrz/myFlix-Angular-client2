@@ -21,10 +21,10 @@ export class UserRegistrationFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '', Email: '', Birthday: '' };
 
   /**
-   * constructs the UserRegistrationFormComponent
-   * @param fetchApiData - the service for fetching API data
-   * @param dialogRef - the dialog reference for the user registration form
-   * @param snackBar - the snack bar service for displaying messages
+   * constructs the UserRegistrationFormComponent.
+   * @param fetchApiData - the service for fetching API data.
+   * @param dialogRef - the dialog reference for the user registration form.
+   * @param snackBar - the snack bar service for displaying messages.
    */
   constructor(
     public fetchApiData: FetchApiDataService,

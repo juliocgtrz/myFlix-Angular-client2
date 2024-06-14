@@ -22,10 +22,10 @@ export class MovieCardComponent implements OnInit {
   
 
   /**
-   * construtor for MovieCardComponent
-   * @param fetchApiData - service for fetching data from the API
-   * @param dialog - service for opening a dialog
-   * @param snackBar - service for displaying snack bar messages
+   * construtor for MovieCardComponent.
+   * @param fetchApiData - service for fetching data from the API.
+   * @param dialog - service for opening a dialog.
+   * @param snackBar - service for displaying snack bar messages.
    */
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -49,9 +49,9 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * opens a dialog to view genre details
-   * @param genre - the genre of the movie
-   * @param description - the description of the genre
+   * opens a dialog to view genre details.
+   * @param genre - the genre of the movie.
+   * @param description - the description of the genre.
    */
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreInfoComponent, {
