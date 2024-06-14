@@ -27,7 +27,7 @@ export class WelcomePageComponent implements OnInit {
   }
 
   /**
-   * Function that will open the dialog when the signup button is clicked.
+   * @description Function that will open the dialog when the signup button is clicked.
    * @returns Dialog with the UserRegistrationFormComponent.
    */
   openUserRegistrationDialog(): void {
@@ -38,7 +38,7 @@ export class WelcomePageComponent implements OnInit {
   }
 
   /**
-   * Function that will open the dialog when the login button is clicked.
+   * @description Function that will open the dialog when the login button is clicked.
    * @returns Dialog with the UserLoginFormComponent.
    */
   openUserLoginDialog(): void {

@@ -42,7 +42,7 @@ export class UserRegistrationFormComponent implements OnInit {
   }
 
   /**
-   * Function responsible for sending the form inputs to the backend.
+   * @description Function responsible for sending the form inputs to the backend.
    * @returns Message "User registration successful" / "User registration successful".
    */
   registerUser(): void {

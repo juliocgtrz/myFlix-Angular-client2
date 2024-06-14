@@ -3,19 +3,26 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
-// declaring the api url that will provide data for the client app
 const apiUrl = 'https://my-movies-flix-db-60666e043a4b.herokuapp.com/';
+
+/**
+ * @description Service for user registration operations.
+ * @injectable
+ */
 @Injectable({
   providedIn: 'root'
 })
 export class FetchApiDataService {
-  // inject the HttpClient module to the constructor params
-  // this will provide HttpClient to the entire class, making it available via this.http
+  /**
+    * @constructor
+    * @param {HttpClient} http - Angular's HttpClient module for making HTTP requests.
+    * @param {DataService} dataService - Service for handling shared data between components.
+    */
   constructor(private http: HttpClient) {
   }
 
   /**
-   * Making the api call for the user registration endpoint.
+   * @description Making the api call for the user registration endpoint.
    * @param {any} userDetails - User details for registration.
    * @returns {Observable<any>} - Observable for the API response.
    */
@@ -27,7 +34,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the user login endpoint.
+   * @description Making the api call for the user login endpoint.
    * @param {any} userDetails - User details for login.
    * @returns {Observable<any>} - Observable for the API response.
    */
@@ -39,7 +46,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Get All Movies endpoint.
+   * @description Making the api call for the Get All Movies endpoint.
    * @returns {Observable<any>} - Observable for the API response.
    */
   public getAllMovies(): Observable<any> {
@@ -54,7 +61,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Get One Movie endpoint.
+   * @description Making the api call for the Get One Movie endpoint.
    * @param {string} title - One movie title.
    * @returns {Observable<any>} - Observable for the API response.
    */
@@ -71,7 +78,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Get Director endpoint.
+   * @description Making the api call for the Get Director endpoint.
    * @returns {Observable<any>} - Observable for the API response.
    */
   public getDirector(directorName: string): Observable<any> {
@@ -87,7 +94,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Get Genre endpoint.
+   * @description Making the api call for the Get Genre endpoint.
    * @returns {Observable<any>} - Observable for the API response.
    */
   public getGenre(genreName: string): Observable<any> {
@@ -103,7 +110,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Get User endpoint.
+   * @description Making the api call for the Get User endpoint.
    * @returns {Observable<any>} - Observable for the API response.
    */
   public getUser(): Observable<any> {
@@ -112,7 +119,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Get Favorite Movies for a user endpoint.
+   * @description Making the api call for the Get Favorite Movies for a user endpoint.
    * @param {string} username - Users username for getting favorite Movies.
    * @returns {Observable<any>} - Observable for the API response.
    */
@@ -129,7 +136,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Add a Movie to Favorite Movies endpoint.
+   * @description Making the api call for the Add a Movie to Favorite Movies endpoint.
    * @param {any} movie - Movie for adding to favorite Movies.
    * @returns {Observable<any>} - Observable for the API response.
    */
@@ -149,7 +156,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Update User endpoint.
+   * @description Making the api call for the Update User endpoint.
    * @param {any} userDetails - User details for updating user information.
    * @returns {Observable<any>} - Observable for the API response.
    */
@@ -166,7 +173,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Delete User endpoint.
+   * @description Making the api call for the Delete User endpoint.
    * @returns {Observable<any>} - Observable for the API response.
    */
   public deleteUser(): Observable<any> {
@@ -183,7 +190,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Making the api call for the Delete a Movie to Favorite Movies endpoint.
+   * @description Making the api call for the Delete a Movie to Favorite Movies endpoint.
    * @param {any} movie - Movie for deleting from favorite Movies.
    * @returns {Observable<any>} - Observable for the API response.
    */
@@ -202,7 +209,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Non-typed response extraction.
+   * @description Non-typed response extraction.
    * @param {Object} res - API response.
    * @returns {any} - Extracted response data.
    */
@@ -212,7 +219,7 @@ export class FetchApiDataService {
   }
 
   /**
-   * Handling of HTTP errors.
+   * @description Handling of HTTP errors.
    * @param {HttpErrorResponse} error - HTTP error response.
    * @returns {any} - Error details.
    */

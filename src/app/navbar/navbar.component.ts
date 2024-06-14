@@ -27,23 +27,23 @@ export class NavbarComponent implements OnInit {
     public router: Router,
   ) { }
 
-  /** lifecycle hook that is called after data-bound properties of a directive are initialized */
+  /** @description lifecycle hook that is called after data-bound properties of a directive are initialized */
   ngOnInit(): void {
     this.Username = JSON.parse(localStorage.getItem("user")!).Username;
   }
 
-  /** function to navigate to the movies page */
+  /** @description function to navigate to the movies page */
   public openMovies(): void {
     this.router.navigate(['movies']);
   }
 
-  /** function to navigate to the profile page */
+  /** @description function to navigate to the profile page */
   public openProfile(): void {
     this.router.navigate(['profile']);
   }
 
   /**
-   * Function to logout user.
+   * @description Function to logout user.
    * @returns Message "You have been logged out successfully".
    */
   public logoutUser(): void {

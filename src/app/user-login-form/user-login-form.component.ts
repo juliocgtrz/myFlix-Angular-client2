@@ -46,7 +46,7 @@ export class UserLoginFormComponent implements OnInit {
   }
 
   /**
-   * Function responsible for sending the form inputs to the backend. 
+   * @description Function responsible for sending the form inputs to the backend. 
    * @returns Message "Logged in successfully" 
    */
   loginUser(): void {

@@ -34,7 +34,7 @@ const appRoutes: Routes = [
 ];
 
 /**
- * Root module for the application.
+ * @description Root module for the application.
  * @module AppModule
  */
 @NgModule({

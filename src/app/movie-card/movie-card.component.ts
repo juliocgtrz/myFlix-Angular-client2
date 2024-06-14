@@ -38,14 +38,14 @@ export class MovieCardComponent implements OnInit {
     public snackBar: MatSnackBar,
   ) {}
 
-  /** lifecycle hook that is called after data-bound properties of directive are initialized */
+  /** @description lifecycle hook that is called after data-bound properties of directive are initialized */
   ngOnInit(): void {
     this.getMovies();
     this.getFavoriteMovies();
   }
 
   /**
-   * Function for getting all movies.
+   * @description Function for getting all movies.
    * @returns All movies.
    */
   getMovies(): void {
@@ -57,7 +57,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Function that will open the dialog when genre button is clicked.
+   * @description Function that will open the dialog when genre button is clicked.
    * @param {string} name - Name of the genre.
    * @param {string} description - Description of the genre.
    * @returns Genre name and discription.
@@ -73,7 +73,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Function that will open the dialog when director button is clicked.
+   * @description Function that will open the dialog when director button is clicked.
    * @param {string} name - Name of the director.
    * @param {string} bio - Biography of the director.
    * @param {string} birth - Birth date of the director.
@@ -91,7 +91,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Function that will open the dialog when synopsis button is clicked
+   * @description Function that will open the dialog when synopsis button is clicked
    * @param {string} description - Description of the movie.
    * @returns Description of the movie.
    */
@@ -105,7 +105,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Function to get favMovie list.
+   * @description Function to get favMovie list.
    * @returns Favorite movies of user.
    */
   getFavoriteMovies(): void {
@@ -116,7 +116,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Function to check if movie is a favorite movie.
+   * @description Function to check if movie is a favorite movie.
    * @param movie  - Movie object to check.
    * @returns {boolean} - Boolean indicating whether the movie is a favorite.
    */
@@ -130,7 +130,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Function add / delete favorite movie by icon button
+   * @description Function add / delete favorite movie by icon button
    * @param {any} movie - Movie to toggle favorite icon for. 
    */
   toggleFavorite(movie: any): void {
@@ -141,7 +141,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Function to add movie to FavoriteMovies list
+   * @description Function to add movie to FavoriteMovies list
    * @param {any} movie - Movie to add to favorite movies.
    * @returns Message "Movie added to your favorites successfully!"
    */
@@ -158,7 +158,7 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * Function to delete movie from FavoriteMovies list.
+   * @description Function to delete movie from FavoriteMovies list.
    * @param {any} movie - Movie to delete from favorite movies.
    * @returns Message "Movie removed from your favorites successfully!"
    */

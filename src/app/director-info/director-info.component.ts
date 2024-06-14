@@ -27,7 +27,7 @@ export class DirectorInfoComponent implements OnInit {
     }
   ) { }
 
-  /** lifecycle hook called after component initialization */
+  /** @description lifecycle hook called after component initialization */
   ngOnInit(): void {
   }
 }

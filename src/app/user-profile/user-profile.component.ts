@@ -51,7 +51,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function for getting user.
+   * @description Function for getting user.
    * @returns users username, email, birthday, and favorite movies.
    */
   public getProfile(): void {
@@ -65,7 +65,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function for getting all movies.
+   * @description Function for getting all movies.
    * @returns All movies.
    */
   getMovies(): void {
@@ -77,7 +77,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function to get FavoriteMovies list.
+   * @description Function to get FavoriteMovies list.
    * @returns Favorite movies of user.
   */
   getFavoriteMovies(): void {
@@ -88,7 +88,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function to check if movie is a favorite movie.
+   * @description Function to check if movie is a favorite movie.
    * @param movie  - Movie object to check.
    * @returns {boolean} - Boolean indicating whether the movie is a favorite.
    */
@@ -102,7 +102,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function to delete movie from FavoriteMovies list.
+   * @description Function to delete movie from FavoriteMovies list.
    * @param {any} movie - Movie to delete from favorite movies.
    * @returns Message "Movie has been deleted from your favorites!"
    */
@@ -120,7 +120,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function for updating user information.
+   * @description Function for updating user information.
    * @returns Message "User update successful" / "Failed to update user"
    */
   updateUser(): void {
@@ -139,7 +139,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function to delete user profile.
+   * @description Function to delete user profile.
    * @returns Message "User successfully deleted."
    */
   deleteUser(): void {
@@ -155,7 +155,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function that will open the dialog when genre button is clicked.
+   * @description Function that will open the dialog when genre button is clicked.
    * @param {string} name - Name of the genre.
    * @param {string} description - Description of the genre.
    * @returns Genre name and discription.
@@ -171,7 +171,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function that will open the dialog when director button is clicked.
+   * @description Function that will open the dialog when director button is clicked.
    * @param {string} name - Name of the director.
    * @param {string} bio - Biography of the director.
    * @param {string} birth - Birth date of the director.
@@ -191,7 +191,7 @@ export class UserProfileComponent implements OnInit {
   }
 
   /**
-   * Function that will open the dialog when synopsis button is clicked
+   * @description Function that will open the dialog when synopsis button is clicked
    * @param {string} description - Description of the movie.
    * @returns Description of the movie.
    */
