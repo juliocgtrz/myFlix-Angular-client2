@@ -6,7 +6,12 @@ import { GenreInfoComponent } from '../genre-info/genre-info.component';
 import { DirectorInfoComponent } from '../director-info/director-info.component';
 import { MovieSynopsisComponent } from '../movie-synopsis/movie-synopsis.component';
 
-/** component for displaying movie cards */
+/**
+ * @description Component representing the movie card.
+ * @selector 'app-movie-card'
+ * @templateUrl './movie-card.component.html'
+ * @styleUrls ['./movie-card.component.scss']
+ */
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
@@ -22,10 +27,10 @@ export class MovieCardComponent implements OnInit {
   
 
   /**
-   * construtor for MovieCardComponent.
-   * @param fetchApiData - service for fetching data from the API.
-   * @param dialog - service for opening a dialog.
-   * @param snackBar - service for displaying snack bar messages.
+   * @constructor - Constructor for MovieCardComponent.
+   * @param {FetchApiDataService} fetchApiData - Service for fetching data from the API.
+   * @param {MatDialog} dialog - Material dialog service for opening dialogs.
+   * @param {MatSnackBar} snackBar - Material snack bar service for displaying notifications.
    */
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -39,7 +44,10 @@ export class MovieCardComponent implements OnInit {
     this.getFavoriteMovies();
   }
 
-  /** fetch all movies from the API */
+  /**
+   * Function for getting all movies.
+   * @returns All movies.
+   */
   getMovies(): void {
     this.fetchApiData.getAllMovies().subscribe((resp: any) => {
       this.movies = resp;
@@ -49,9 +57,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-   * opens a dialog to view genre details.
-   * @param genre - the genre of the movie.
-   * @param description - the description of the genre.
+   * Function that will open the dialog when genre button is clicked.
+   * @param {string} name - Name of the genre.
+   * @param {string} description - Description of the genre.
+   * @returns Genre name and discription.
    */
   openGenreDialog(name: string, description: string): void {
     this.dialog.open(GenreInfoComponent, {
@@ -64,11 +73,12 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-     * Opens a dialog displaying director details.
-     * @param director - The name of the director.
-     * @param bio - The biography of the director.
-     * @param birthdate - The birthdate of the director.
-     */
+   * Function that will open the dialog when director button is clicked.
+   * @param {string} name - Name of the director.
+   * @param {string} bio - Biography of the director.
+   * @param {string} birth - Birth date of the director.
+   * @returns Directors name, bio, birth date and death date.
+   */
   openDirectorDialog(name: string, bio: string, birth: string): void {
     this.dialog.open(DirectorInfoComponent, {
       data: {
@@ -81,10 +91,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-    * Opens a dialog displaying movie synopsis.
-    * @param movieName - The name of the movie.
-    * @param description - The synopsis of the movie.
-    */
+   * Function that will open the dialog when synopsis button is clicked
+   * @param {string} description - Description of the movie.
+   * @returns Description of the movie.
+   */
   openSynopsisDialog(description: string): void {
     this.dialog.open(MovieSynopsisComponent, {
       data: {
@@ -94,6 +104,10 @@ export class MovieCardComponent implements OnInit {
     });
   }
 
+  /**
+   * Function to get favMovie list.
+   * @returns Favorite movies of user.
+   */
   getFavoriteMovies(): void {
     this.user = this.fetchApiData.getUser();
     this.userData.FavoriteMovies = this.user.FavoriteMovies;
@@ -102,10 +116,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-    * Checks if a movie is in the user's favorite list.
-    * @param movie - The movie to check.
-    * @returns True if the movie is in the favorite list, false otherwise.
-    */
+   * Function to check if movie is a favorite movie.
+   * @param movie  - Movie object to check.
+   * @returns {boolean} - Boolean indicating whether the movie is a favorite.
+   */
   isFavorite(movie: any): any {
     const MovieID = movie._id;
     if (this.FavoriteMovies.some((movie) => movie === MovieID)) {
@@ -116,9 +130,9 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-    * Toggles a movie in the user's favorite list.
-    * @param movie - The movie to toggle.
-    */
+   * Function add / delete favorite movie by icon button
+   * @param {any} movie - Movie to toggle favorite icon for. 
+   */
   toggleFavorite(movie: any): void {
     const isFavorite = this.isFavorite(movie);
     isFavorite
@@ -127,9 +141,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-     * Adds a movie to the user's favorite list.
-     * @param movie - The movie to add to favorites.
-     */
+   * Function to add movie to FavoriteMovies list
+   * @param {any} movie - Movie to add to favorite movies.
+   * @returns Message "Movie added to your favorites successfully!"
+   */
   addFavoriteMovies(movie: any): void {
     this.user = this.fetchApiData.getUser();
     this.userData.Username = this.user.Username;
@@ -143,9 +158,10 @@ export class MovieCardComponent implements OnInit {
   }
 
   /**
-     * Deletes a movie from the user's favorite list.
-     * @param movie - The movie to remove from favorites.
-     */
+   * Function to delete movie from FavoriteMovies list.
+   * @param {any} movie - Movie to delete from favorite movies.
+   * @returns Message "Movie removed from your favorites successfully!"
+   */
   deleteFavoriteMovies(movie: any): void {
     this.user = this.fetchApiData.getUser();
     this.userData.Username = this.user.Username;

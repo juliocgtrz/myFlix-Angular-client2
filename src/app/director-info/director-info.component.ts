@@ -1,7 +1,12 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-/** display director info in a dialog */
+/**
+ * @description Component representing the director info dialog.
+ * @selector 'app-director-info'
+ * @templateUrl './director-info.component.html'
+ * @styleUrls ['./director-info.component.scss']
+ */
 @Component({
   selector: 'app-director-info',
   templateUrl: './director-info.component.html',
@@ -10,8 +15,8 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 export class DirectorInfoComponent implements OnInit {
 
   /**
-   * constructor for DirectorInfoComponent.
-   * @param data - data injected into the component containing the director info.
+   * @constructor - Constructor for DirectorInfoComponent.
+   * @param - Data containing director information.
    */
   constructor(
     @Inject(MAT_DIALOG_DATA)

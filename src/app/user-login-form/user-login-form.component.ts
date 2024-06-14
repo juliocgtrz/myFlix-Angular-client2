@@ -12,7 +12,12 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Router } from '@angular/router';
 
-/** component for user login form */
+/**
+ * @description Component representing the login form.
+ * @selector 'app-user-login-form'
+ * @templateUrl './user-login-form.component.html'
+ * @styleUrls ['./user-login-form.component.scss']
+ */
 @Component({
   selector: 'app-user-login-form',
   templateUrl: './user-login-form.component.html',
@@ -23,11 +28,11 @@ export class UserLoginFormComponent implements OnInit {
   @Input() userData = { Username: '', Password: '' };
 
   /**
-   * constructs the UserLoginFormComponent.
-   * @param fetchApiData - the service for fetching API data.
-   * @param dialogRef - the reference to the dialog.
-   * @param snackBar - the service for showing snack bar notifications.
-   * @param router - the router service for navigation.
+   * @constructor
+   * @param {FetchApiDataService} fetchApiData - Service for fetching data from the API.
+   * @param {MatDialogRef<UserLoginFormComponent>} dialogRef - Material dialog service for opening user login dialog.
+   * @param {MatSnackBar} snackBar - Material snack bar service for displaying notifications.
+   * @param {Router} router - Router service for navigation.
    */
   constructor(
     public fetchApiData: FetchApiDataService,
@@ -40,7 +45,10 @@ export class UserLoginFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  // this is the function responsible for sending the form inputs to the backend
+  /**
+   * Function responsible for sending the form inputs to the backend. 
+   * @returns Message "Logged in successfully" 
+   */
   loginUser(): void {
     this.fetchApiData.userLogin(this.userData).subscribe((response) => {
       localStorage.setItem('user', JSON.stringify(response.user));

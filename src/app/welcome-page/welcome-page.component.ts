@@ -3,7 +3,12 @@ import { UserRegistrationFormComponent } from '../user-registration-form/user-re
 import { UserLoginFormComponent } from '../user-login-form/user-login-form.component';
 import { MatDialog } from '@angular/material/dialog';
 
-/** component for the welcome page */
+/**
+ * @description Component representing the welcome page.
+ * @selector 'app-welcome-page'
+ * @templateUrl './welcome-page.component.html'
+ * @styleUrls ['./welcome-page.component.scss']
+ */
 @Component({
   selector: 'app-welcome-page',
   templateUrl: './welcome-page.component.html',
@@ -11,8 +16,8 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class WelcomePageComponent implements OnInit {
   /**
-   * constructs the WelcomePageComponent.
-   * @param dialog - the dialog service for opening the dialog.
+   * @constructor
+   * @param {MatDialog} dialog - Material dialog service for opening dialogs.
    */
   constructor(public dialog: MatDialog
   ) { }
@@ -21,6 +26,10 @@ export class WelcomePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  /**
+   * Function that will open the dialog when the signup button is clicked.
+   * @returns Dialog with the UserRegistrationFormComponent.
+   */
   openUserRegistrationDialog(): void {
     this.dialog.open(UserRegistrationFormComponent, {
       // assigning the dialog a width
@@ -28,6 +37,10 @@ export class WelcomePageComponent implements OnInit {
     });
   }
 
+  /**
+   * Function that will open the dialog when the login button is clicked.
+   * @returns Dialog with the UserLoginFormComponent.
+   */
   openUserLoginDialog(): void {
     this.dialog.open(UserLoginFormComponent, {
       // assigning the dialog a width

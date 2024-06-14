@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
-/** component for the navigation bar displayed at the top of the screen */
+/**
+ * @description Component representing the navbar.
+ * @selector 'app-navbar'
+ * @templateUrl './navbar.component.html'
+ * @styleUrls ['./navbar.component.scss']
+ */
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -13,9 +18,9 @@ export class NavbarComponent implements OnInit {
   public Username: string = "";
 
   /**
-   * constructor for NavbarComponent.
-   * @param snackBar - angular material service for displaying snackbar messages.
-   * @param router - angular service for navigating between routes.
+   * @constructor - Constructor for NavbarComponent. 
+   * @param {Router} router - Router service for navigation.
+   * @param {MatSnackBar} snackBar - Material snack bar service for displaying notifications.
    */
   constructor(
     public snackBar: MatSnackBar,
@@ -37,7 +42,10 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(['profile']);
   }
 
-  /** function for user to logout */
+  /**
+   * Function to logout user.
+   * @returns Message "You have been logged out successfully".
+   */
   public logoutUser(): void {
     localStorage.setItem('token', '');
     localStorage.setItem('user', '');
